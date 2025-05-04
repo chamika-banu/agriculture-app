@@ -9,6 +9,7 @@ import userRoutes from './routes/userRoutes.js'
 import communityRoutes from "./routes/community-routes/communityRoutes.js"
 import postRoutes from "./routes/community-routes/postRoutes.js"
 import replyRoutes from "./routes/community-routes/replyRoutes.js"
+import analyzePlantRoute from "./routes/analyzePlantRoute.js"
 
 dotenv.config()
 const app = express()
@@ -38,6 +39,7 @@ app.use("/api/users", userRoutes)
 app.use("/api/communities", communityRoutes)
 app.use("/api/community-posts", postRoutes)
 app.use("/api/community-replies", replyRoutes)
+app.use("/api/analyze-plant", analyzePlantRoute)
 
 // Test connection
 app.get("/", (res) => {
