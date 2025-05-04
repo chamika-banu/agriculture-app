@@ -1,7 +1,6 @@
 import "../global.css"
 import { AuthProvider } from "../context/authContext"
 import { CommunityProvider } from "../context/communityContext"
-import Header from "../components/Header"
 
 import { SplashScreen, Stack } from "expo-router"
 import { useFonts } from "expo-font"
@@ -44,47 +43,23 @@ const RootLayout = () => {
 					<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 					<Stack.Screen
 						name="communities"
-						options={{ headerShown: false }}
-						// options={{
-						// 	header: () => (
-						// 		<Header backLink={"community"} title="Communities" />
-						// 	),
-						// 	animation: "fade",
-						// }}
+						options={{ headerShown: false }}						
 					/>
 					<Stack.Screen
 						name="community/[communityId]"
-						options={{ headerShown: false }}
-						// options={{
-						// 	header: () => (
-						// 		<Header title="Community" backLink={"communities"} />
-						// 	),
-						// 	animation: "fade",
-						// }}
+						options={{ headerShown: false }}						
 					/>
 					<Stack.Screen
 						name="communityUser/[userId]"
-						options={{ headerShown: false }}
-						// options={{
-						// 	header: () => <Header title="" />,
-						// 	animation: "fade",
-						// }}
+						options={{ headerShown: false }}						
 					/>
 					<Stack.Screen
 						name="community/post/[postId]"
-						options={{ headerShown: false }}
-						// options={{
-						// 	header: () => <Header title="Post" />,
-						// 	animation: "fade",
-						// }}
+						options={{ headerShown: false }}						
 					/>
 					<Stack.Screen
 						name="community/post/reply/[postId]"
-						options={{ headerShown: false }}
-						// options={{
-						// 	header: () => <Header title="Reply" />,
-						// 	animation: "fade",
-						// }}
+						options={{ headerShown: false }}						
 					/>
 				</Stack>
 			</CommunityProvider>

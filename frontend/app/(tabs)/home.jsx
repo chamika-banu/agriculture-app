@@ -118,7 +118,7 @@ const Home = () => {
 					}}
 					textStyle={{ fontFamily: "Poppins-Regular" }}
 					selectedTextStyle={{ fontFamily: "Poppins-Regular" }}
-					fontSize={16}
+					fontSize={14}
 				/>
 
 				<View className="mt-4">

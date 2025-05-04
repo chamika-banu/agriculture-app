@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router"
 import { Text, View } from "react-native"
 import Feather from "@expo/vector-icons/Feather"
+import Ionicons from "@expo/vector-icons/Ionicons"
 
 const TabIcon = ({ icon, color, name, focused }) => {
 	return (
@@ -47,6 +48,22 @@ const TabLayout = () => {
 			/>
 
 			<Tabs.Screen
+				name="plantations"
+				options={{
+					title: "Plantations",
+					headerShown: false,
+					tabBarIcon: ({ color, focused }) => (
+						<TabIcon
+							icon={<Ionicons name="leaf-outline" size={24} color={color}/>}
+							color={color}
+							name="Plantations"
+							focused={focused}
+						/>
+					),
+				}}
+			/>
+
+			<Tabs.Screen
 				name="community"
 				options={{
 					title: "Community",
@@ -77,7 +94,6 @@ const TabLayout = () => {
 					),
 				}}
 			/>
-			
 		</Tabs>
 	)
 }

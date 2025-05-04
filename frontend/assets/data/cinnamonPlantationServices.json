@@ -1,0 +1,170 @@
+{
+  "sections": [
+    {
+      "title": "Cinnamon Plantation Contacts",
+      "content": "Contact details for key organizations supporting cinnamon plantations in Sri Lanka."
+    },
+    {
+      "title": "Department of Cinnamon Development",
+      "details": [
+        {
+          "location": "Gunarathna Weerakoon Mawatha, Borakanda, Karandeniya",
+          "links": [
+            {
+              "title": "Call: +94 91 2210999",
+              "url": "tel:+94912210999"
+            },
+            {
+              "title": "Visit Website",
+              "url": "https://cinnamon.gov.lk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ministry of Plantation Industries",
+      "details": [
+        {
+          "location": "C-Wing, 8th Floor, Sethsiripaya Stage II, Battaramulla",
+          "links": [
+            {
+              "title": "Call: +94 112 186 093",
+              "url": "tel:+94112186093"
+            },
+            {
+              "title": "Email: secretary@plantation.gov.lk",
+              "url": "mailto:secretary@plantation.gov.lk"
+            },
+            {
+              "title": "Visit Website",
+              "url": "https://plantation.gov.lk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Plantation Human Development Trust (PHDT)",
+      "details": [
+        {
+          "location": "Head Office: No. 427/14, Robert Gunawardena Mawatha, Battaramulla",
+          "links": [
+            {
+              "title": "Call: +94 112 887 497",
+              "url": "tel:+94112887497"
+            },
+            {
+              "title": "Email: info@phdt.lk",
+              "url": "mailto:info@phdt.lk"
+            },
+            {
+              "title": "Visit Website",
+              "url": "https://phdt.org"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sri Lanka State Plantations Corporation (SLSPC)",
+      "details": [
+        {
+          "location": "Head Office: No. 21, BBC Complex, Miraniya Street, Colombo 12",
+          "links": [
+            {
+              "title": "Call: +94 115 757 539",
+              "url": "tel:+94115757539"
+            },
+            {
+              "title": "Visit Website",
+              "url": "https://slspc.lk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "National Institute of Plantation Management (NIPM)",
+      "details": [
+        {
+          "location": "M.D.H. Jayawardena Mawatha, Athurugiriya",
+          "links": [
+            {
+              "title": "Call: +94 11 277 0232",
+              "url": "tel:+94112770232"
+            },
+            {
+              "title": "Email: info@nipm.gov.lk",
+              "url": "mailto:info@nipm.gov.lk"
+            },
+            {
+              "title": "Visit Website",
+              "url": "https://nipm.gov.lk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Department of Agrarian Development",
+      "details": [
+        {
+          "location": "Head Office: No. 42, Sri Marcus Fernando Mawatha, P.O. Box 537, Colombo 07",
+          "links": [
+            {
+              "title": "Call: +94 114 209 235",
+              "url": "tel:+94114209235"
+            },
+            {
+              "title": "Email: info@agrariandept.gov.lk",
+              "url": "mailto:info@agrariandept.gov.lk"
+            },
+            {
+              "title": "Visit Website",
+              "url": "https://www.agrariandept.gov.lk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+			"title": "PHDT Regional Offices",
+			"details": [
+				{
+					"location": "Galle: C/o, Walahanduwa Estate, Walahanduwa",
+					"links": [
+						{
+							"title": "Call: +94 91 222 2424",
+							"url": "tel:+94912222424"
+						}
+					]
+				},
+				{
+					"location": "Kandy: No. 01, Balakotuwa Camp Road, Pallakele, Kundasale",
+					"links": [
+						{
+							"title": "Call: +94 81 242 2284",
+							"url": "tel:+94812422284"
+						}
+					]
+				},
+				{
+					"location": "Ratnapura: Paradise, Kuruwita"
+				},
+				{
+					"location": "Hatton: PHDT, Hatton Region, 243, Main Street, Dickoya"
+				},
+				{
+					"location": "Badulla: P.O.Box 09, Hingurugama Complex, Badulla"
+				},
+				{
+					"location": "Kegalle: Sir Francis Molamure Mawatha, Ranwala, Kegalle"
+				},
+				{
+					"location": "Nuwara Eliya: No: 56, St. Andrews Drive, Nuwara Eliya"
+				}
+			]
+		}
+  ]
+}

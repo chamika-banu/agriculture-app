@@ -1,0 +1,134 @@
+{
+	"sections": [
+		{
+			"title": "Tea Plantation Contacts",
+			"content": "Contact details for key organizations supporting tea plantations in Sri Lanka."
+		},
+		{
+			"title": "Sri Lanka Tea Board - Galle Office",
+			"details": [
+				{
+					"location": "Walahanduwa Wattha, Walahanduwa",
+					"links": [
+						{
+							"title": "Call: +94 91 2232052",
+							"url": "tel:+94912232052"
+						},
+						{
+							"title": "Email: atcgalle@pureceylontea.com",
+							"url": "mailto:atcgalle@pureceylontea.com"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Sri Lanka Tea Board - Matara Office",
+			"details": [
+				{
+					"location": "No. 23, New Lane, Uyanwatta, Matara",
+					"links": [
+						{
+							"title": "Call: +94 41 2222636",
+							"url": "tel:+94412222636"
+						},
+						{
+							"title": "Email: atcmatara@pureceylontea.com",
+							"url": "mailto:atcmatara@pureceylontea.com"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Sri Lanka Tea Board - Baduraliya Office",
+			"details": [
+				{
+					"location": "Wathurana Road, Baduraliya",
+					"links": [
+						{
+							"title": "Call: +94 34 2247444",
+							"url": "tel:+94342247444"
+						},
+						{
+							"title": "Email: atcmathugama@pureceylontea.com",
+							"url": "mailto:atcmathugama@pureceylontea.com"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Sri Lanka Tea Board - Bandarawela Office",
+			"details": [
+				{
+					"location": "Vishaka Road, Bandarawela",
+					"links": [
+						{
+							"title": "Call: +94 57 2222812",
+							"url": "tel:+94572222812"
+						},
+						{
+							"title": "Email: atcbandarawela@pureceylontea.com",
+							"url": "mailto:atcbandarawela@pureceylontea.com"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Sri Lanka Tea Board - Rathnapura Office",
+			"details": [
+				{
+					"location": "No. 1/61, New Town, Rathnapura",
+					"links": [
+						{
+							"title": "Call: +94 45 2222136",
+							"url": "tel:+94452222136"
+						},
+						{
+							"title": "Email: atcrathnapura@pureceylontea.com",
+							"url": "mailto:atcrathnapura@pureceylontea.com"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Sri Lanka Tea Board - Gampola Office",
+			"details": [
+				{
+					"location": "No. 140, Ambagamuwa Road, Gampola",
+					"links": [
+						{
+							"title": "Call: +94 81 2352279",
+							"url": "tel:+94812352279"
+						},
+						{
+							"title": "Email: atcgampola@pureceylontea.com",
+							"url": "mailto:atcgampola@pureceylontea.com"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Sri Lanka Tea Board - Nuwara Eliya Office",
+			"details": [
+				{
+					"location": "No. 10, Kelegala, Nanuoya Road, Nuwara Eliya",
+					"links": [
+						{
+							"title": "Call: +94 52 2234695",
+							"url": "tel:+94522234695"
+						},
+						{
+							"title": "Email: atcnuwaraeliya@pureceylontea.com",
+							"url": "mailto:atcnuwaraeliya@pureceylontea.com"
+						}
+					]
+				}
+			]
+		}
+	]
+}
