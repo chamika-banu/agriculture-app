@@ -18,8 +18,8 @@ const News = () => {
 			className="flex-1 bg-[#f9fafb]"
 			edges={["top", "left", "right"]}
 		>
-			<ScrollView className="px-4">
-				<Text className="font-psemibold text-2xl text-[#22c55e] mt-2 mb-4">
+			<ScrollView className="px-4 mt-4">
+				<Text className="font-psemibold text-2xl text-[#22c55e] mb-4">
 					Latest News and Updates
 				</Text>
 				{newsData.map((item, index) => (
@@ -36,6 +36,7 @@ const News = () => {
 						</Text>
 
 						<TouchableOpacity
+							activeOpacity={0.8}
 							onPress={() => handleLinkPress(item.url)}
 							className="px-3 py-1 mt-4 rounded-full border border-green-500/20 bg-green-500/10 flex-row justify-center items-center gap-2 w-36"
 						>

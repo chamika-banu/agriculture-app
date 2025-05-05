@@ -1,6 +1,5 @@
-import { View, Text, TextInput, TouchableOpacity } from "react-native"
+import { View, Text, TextInput, TouchableOpacity, ActivityIndicator } from "react-native"
 import React, { useState } from "react"
-import axiosInstance from "../../api/axiosInstance"
 
 import AuthContainer from "../../components/AuthContainer"
 import { registerUser } from "../../api/authApi"
@@ -38,6 +37,8 @@ const SignUp = () => {
 			setError("Password must contain at least 6 characters")			
 			return
 		}
+
+		setLoading(true)
 
 		try {
 			const response = await registerUser(credentials)
@@ -102,11 +103,19 @@ const SignUp = () => {
 				)}
 				<TouchableOpacity
 					onPress={handleSubmit}
+					activeOpacity={0.8}
 					className="p-4 mt-4 bg-[#52d66d] rounded-3xl "
+					disabled={loading}
 				>
-					<Text className="text-center font-psemibold text-white ">
-						Register
-					</Text>
+					{loading ? (
+						<ActivityIndicator color="white" />
+					) : (
+						<>
+							<Text className="text-center font-psemibold text-white ">
+								Register
+							</Text>
+						</>
+					)}
 				</TouchableOpacity>
 				<Text className="font-pmedium mt-2 ml-1">
 					Already have an account?{" "}

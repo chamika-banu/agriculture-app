@@ -89,13 +89,17 @@ const CommunityUserProfile = () => {
 								<Text className="text-lg font-psemibold text-green-500">
 									{userCommunities.length}
 								</Text>
-								<Text className="text-sm font-pmedium text-gray-600">Communities</Text>
+								<Text className="text-sm font-pmedium text-gray-600">
+									Communities
+								</Text>
 							</View>
 							<View className="items-center">
 								<Text className="text-lg font-psemibold text-green-500">
 									{userPosts.length}
 								</Text>
-								<Text className="text-sm font-pmedium text-gray-600">Posts</Text>
+								<Text className="text-sm font-pmedium text-gray-600">
+									Posts
+								</Text>
 							</View>
 						</View>
 					</View>
@@ -114,6 +118,7 @@ const CommunityUserProfile = () => {
 							You have not joined any community yet.
 						</Text>
 						<TouchableOpacity
+							activeOpacity={0.8}
 							onPress={() => router.push("communities")}
 							className="center"
 						>
@@ -153,7 +158,7 @@ const CommunityUserProfile = () => {
 	)
 
 	return (
-		<SafeAreaView className="flex-1 bg-[#F2F2F2]">
+		<SafeAreaView className="flex-1 bg-[#F2F2F2] mt-4">
 			<FlatList
 				data={userPosts}
 				keyExtractor={(post) => post._id}

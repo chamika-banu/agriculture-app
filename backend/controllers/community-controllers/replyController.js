@@ -16,7 +16,7 @@ export const createReply = async (req, res) => {
 				.json({ message: "Content, postId, and communityId are required" })
 		}
 
-		// Check if post exists		
+		// Check if post exists
 		const post = await PostModel.findById(postId)
 		if (!post) {
 			return res.status(404).json({ message: "Post not found" })
@@ -164,7 +164,7 @@ export const likeUnlikeReply = async (req, res) => {
 	}
 }
 
-export const deleteReply = async (req, res) => {	
+export const deleteReply = async (req, res) => {
 	try {
 		const { replyId } = req.params
 		const userId = req.user.id // Assuming the user is logged in and their ID is available in req.user
@@ -195,4 +195,3 @@ export const deleteReply = async (req, res) => {
 		return res.status(500).json({ message: "Server error" })
 	}
 }
-

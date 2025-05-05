@@ -56,7 +56,7 @@ const Home = () => {
 					png: "image/png",
 					gif: "image/gif",
 					webp: "image/webp",
-				}[extension] || "image/jpeg"
+				}[extension] || "image/jpeg"			
 
 			// Create FormData
 			const formData = new FormData()
@@ -64,7 +64,7 @@ const Home = () => {
 				uri: image,
 				type: mimeType,
 				name: `upload_${Date.now()}.${extension}`,
-			})
+			})			
 
 			formData.append("plantType", plantType)
 
@@ -94,7 +94,7 @@ const Home = () => {
 			className="flex-1 bg-[#F2F2F2]"
 			edges={["top", "left", "right"]}
 		>
-			<ScrollView className="px-4">
+			<ScrollView className="px-4 mt-4">
 				<Text className="font-psemibold text-lg">
 					Hello, {user.fullName} 👋
 				</Text>
@@ -125,6 +125,7 @@ const Home = () => {
 				/>
 
 				<TouchableOpacity
+					activeOpacity={0.8}
 					onPress={pickImage}
 					className="bg-black p-3 rounded-xl mb-4 mt-4"
 				>
@@ -134,6 +135,7 @@ const Home = () => {
 				</TouchableOpacity>
 
 				<TouchableOpacity
+					activeOpacity={0.8}
 					onPress={captureImage}
 					className="bg-black p-3 rounded-xl"
 				>
@@ -155,6 +157,7 @@ const Home = () => {
 						{!result ? (
 							<TouchableOpacity
 								onPress={handleUpload}
+								activeOpacity={0.8}
 								className="bg-black p-3 rounded-xl mt-4"
 							>
 								{loading ? (
@@ -167,6 +170,7 @@ const Home = () => {
 							</TouchableOpacity>
 						) : (
 							<TouchableOpacity
+								activeOpacity={0.8}
 								onPress={() => {
 									setResult(null)
 								}}

@@ -3,14 +3,13 @@ import {
 	Text,
 	StyleSheet,
 	TextInput,
-	ScrollView,
+	FlatList,
 	TouchableOpacity,
 	Alert,
 	ActivityIndicator,
 	Pressable,
 } from "react-native"
-import React, { useEffect, useState } from "react"
-import RNPickerSelect from "react-native-picker-select"
+import { useEffect, useState } from "react"
 import { getProfile } from "../../api/profileApi"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { Image } from "expo-image"
@@ -152,12 +151,6 @@ const profile = () => {
 			return false
 		}
 
-		// if ("location" in changes && !/^[a-zA-Z\s]+$/.test(updatedData.location)) {
-		// 	setError("Location must contain only letters")
-		// 	setIsLoading(false)
-		// 	return false
-		// }
-
 		if (updatedData.password.trim() && updatedData.password.length < 6) {
 			setError("Password must contain at least 6 characters")
 			setIsLoading(false)
@@ -168,7 +161,7 @@ const profile = () => {
 	}
 
 	const pickImage = async () => {
-		let result = await ImagePicker.launchImageLibraryAsync({
+		const result = await ImagePicker.launchImageLibraryAsync({
 			mediaTypes: ["images"],
 			allowsEditing: true,
 			quality: 1,
@@ -279,242 +272,280 @@ const profile = () => {
 		}
 	}
 
-	return (
-		<SafeAreaView className="flex-1 bg-[#F2F2F2]">
-			{isEditing && (
-				<Pressable
-					onPress={() => {
-						setIsEditing(false);
-						setUpdatedData({
-							fullName: "",
-							email: "",
-							profileImage: "",
-							contactNo: "",
-							location: "",
-							password: "",
-						})
-					}}
-				>
-					<View className="flex flex-row gap-2 items-center">
-						<Feather
-							name="chevron-left"
-							size={32}
-							color="black"
-							className="ml-6"
-						/>
-						<Text className="font-psemibold text-lg">Update Profile</Text>
-					</View>
-				</Pressable>
-			)}
-			{!isEditing ? (
-				<>
-					<View className="flex justify-center items-center gap-6 mt-2">
-						<Image
-							source={
-								userData.profileImage ? { uri: userData.profileImage } : avatar
-							}
-							style={[styles.profileImage]}
-							contentFit="cover"
-						/>
-						<Text className="font-psemibold text-2xl line-clamp-1 px-8">
-							{userData.fullName}
-						</Text>
-					</View>
+	// Create a simple data array for FlatList
+	const profileData = [{ id: "profile" }]
 
-					<View className="flex gap-12 mt-12">
-						<View className="px-12">
-							<View className="flex flex-row justify-between items-center">
-								<View className="flex flex-row gap-4 items-center">
-									<Feather name="mail" size={24} color="#2bbc49" />
-									<Text className="font-pmedium">Mail</Text>
+	const renderProfileContent = ({ item }) => {
+		return (
+			<>
+				{isEditing && (
+					<Pressable
+						onPress={() => {
+							setIsEditing(false)
+							setUpdatedData({
+								fullName: "",
+								email: "",
+								profileImage: "",
+								contactNo: "",
+								location: "",
+								password: "",
+							})
+						}}
+					>
+						<View className="flex flex-row gap-2 items-center">
+							<Feather
+								name="chevron-left"
+								size={32}
+								color="black"
+								className="ml-6"
+							/>
+							<Text className="font-psemibold text-lg">Update Profile</Text>
+						</View>
+					</Pressable>
+				)}
+				{!isEditing ? (
+					<>
+						<View className="flex justify-center items-center gap-6 mt-2">
+							<Image
+								source={
+									userData.profileImage
+										? { uri: userData.profileImage }
+										: avatar
+								}
+								style={[styles.profileImage]}
+								contentFit="cover"
+							/>
+							<Text className="font-psemibold text-2xl line-clamp-1 px-8">
+								{userData.fullName}
+							</Text>
+						</View>
+
+						<View className="flex gap-12 mt-12">
+							<View className="px-12">
+								<View className="flex flex-row justify-between items-center">
+									<View className="flex flex-row gap-4 items-center">
+										<Feather name="mail" size={24} color="#2bbc49" />
+										<Text className="font-pmedium">Mail</Text>
+									</View>
+									<Text className="font-pmedium">{userData.email}</Text>
 								</View>
-								<Text className="font-pmedium">{userData.email}</Text>
+							</View>
+							<View className="px-12">
+								<View className="flex flex-row justify-between items-center">
+									<View className="flex flex-row gap-4 items-center">
+										<Feather name="phone" size={24} color="#2bbc49" />
+										<Text className="font-pmedium ">Phone</Text>
+									</View>
+									<Text className="font-pmedium">
+										{userData.contactNo || "-"}
+									</Text>
+								</View>
+							</View>
+							<View className="px-12">
+								<View className="flex flex-row justify-between items-center">
+									<View className="flex flex-row gap-4 items-center">
+										<Feather name="map-pin" size={24} color="#2bbc49" />
+										<Text className="font-pmedium">District</Text>
+									</View>
+									<Text className="font-pmedium">
+										{userData.location || "-"}
+									</Text>
+								</View>
 							</View>
 						</View>
-						<View className="px-12">
-							<View className="flex flex-row justify-between items-center">
-								<View className="flex flex-row gap-4 items-center">
-									<Feather name="phone" size={24} color="#2bbc49" />
-									<Text className="font-pmedium ">Phone</Text>
-								</View>
-								<Text className="font-pmedium">
-									{userData.contactNo || "-"}
-								</Text>
-							</View>
-						</View>
-						<View className="px-12">
-							<View className="flex flex-row justify-between items-center">
-								<View className="flex flex-row gap-4 items-center">
-									<Feather name="map-pin" size={24} color="#2bbc49" />
-									<Text className="font-pmedium">District</Text>
-								</View>
-								<Text className="font-pmedium">{userData.location || "-"}</Text>
-							</View>
-						</View>
-					</View>
 
-					<TouchableOpacity onPress={handleEditing}>
-						<View className="flex flex-row justify-center items-center gap-4 mt-12 border-2 bg-black py-3 rounded-3xl mx-8">
-							<Feather name="edit-2" size={24} color="white" />
-							<Text className="font-pmedium text-white">Update Profile</Text>
-						</View>
-					</TouchableOpacity>
-
-					<TouchableOpacity onPress={handleDeletion}>
-						<View className="flex flex-row justify-center items-center gap-4 mt-8 border-2 border-red-600 py-3 rounded-3xl mx-8">
-							<Feather name="trash" size={24} color="#dc2626" />
-							<Text className="font-pmedium text-red-600">Delete Account</Text>
-						</View>
-					</TouchableOpacity>
-
-					<TouchableOpacity onPress={handleLogout}>
-						<View className="flex flex-row justify-center items-center gap-4 mt-8 border-2 border-red-600 py-3 rounded-3xl mx-8">
-							<Feather name="log-out" size={24} color="#dc2626" />
-							<Text className="font-pmedium text-red-600">Logout</Text>
-						</View>
-					</TouchableOpacity>
-				</>
-			) : (
-				<>
-					<View className="flex justify-center items-center gap-4 mt-2">
-						<TouchableOpacity onPress={pickImage}>
-							<View>
-								<Image
-									source={image || userData.profileImage}
-									style={[styles.profileImage]}
-									contentFit="cover"
-								/>
-								<TouchableOpacity
-									className="absolute -right-1 -bottom-1 bg-gray-100 border border-gray-200 p-1 rounded-full"
-									onPress={pickImage}
-								>
-									<Feather name="camera" size={20} color="grey" />
-								</TouchableOpacity>
+						<TouchableOpacity onPress={handleEditing} activeOpacity={0.8}>
+							<View className="flex flex-row justify-center items-center gap-4 mt-12 border-2 bg-black py-3 rounded-3xl mx-8">
+								<Feather name="edit-2" size={24} color="white" />
+								<Text className="font-pmedium text-white">Update Profile</Text>
 							</View>
 						</TouchableOpacity>
-					</View>
 
-					<View className="flex gap-8 mt-4">
-						<View className="px-8">
-							<Text className="font-pmedium">Name:</Text>
-							<TextInput
-								className="mt-2 p-3 outline-none border rounded-xl border-gray-300 font-pregular placeholder:text-gray-400"
-								placeholder={userData.fullName}
-								maxLength={50}
-								value={updatedData.fullName}
-								onChangeText={(text) => {
-									setUpdatedData((prev) => ({ ...prev, fullName: text }))
-									if (error) setError("")
-								}}
-							/>
+						<TouchableOpacity onPress={handleDeletion} activeOpacity={0.8}>
+							<View className="flex flex-row justify-center items-center gap-4 mt-8 border-2 border-red-600 py-3 rounded-3xl mx-8">
+								<Feather name="trash" size={24} color="#dc2626" />
+								<Text className="font-pmedium text-red-600">
+									Delete Account
+								</Text>
+							</View>
+						</TouchableOpacity>
+
+						<TouchableOpacity onPress={handleLogout} activeOpacity={0.8}>
+							<View className="flex flex-row justify-center items-center gap-4 mt-8 border-2 border-red-600 py-3 rounded-3xl mx-8">
+								<Feather name="log-out" size={24} color="#dc2626" />
+								<Text className="font-pmedium text-red-600">Logout</Text>
+							</View>
+						</TouchableOpacity>
+					</>
+				) : (
+					<>
+						<View className="flex justify-center items-center gap-4 mt-2">
+							<TouchableOpacity onPress={pickImage} activeOpacity={0.8}>
+								<View>
+									<Image
+										source={image || userData.profileImage}
+										style={[styles.profileImage]}
+										contentFit="cover"
+									/>
+									<TouchableOpacity
+										className="absolute -right-1 -bottom-1 bg-gray-100 border border-gray-200 p-1 rounded-full"
+										onPress={pickImage}
+										activeOpacity={0.8}
+									>
+										<Feather name="camera" size={20} color="grey" />
+									</TouchableOpacity>
+								</View>
+							</TouchableOpacity>
 						</View>
 
-						<View className="px-8">
-							<Text className="font-pmedium">Email:</Text>
-							<TextInput
-								className="mt-2 p-3 outline-none border rounded-xl border-gray-300 font-pregular placeholder:text-gray-400"
-								placeholder={userData.email}
-								maxLength={128}
-								value={updatedData.email}
-								onChangeText={(text) => {
-									setUpdatedData((prev) => ({ ...prev, email: text }))
-									if (error) setError("")
-								}}
-							/>
+						<View className="flex gap-8 mt-4">
+							<View className="px-8">
+								<Text className="font-pmedium">Name:</Text>
+								<TextInput
+									className="mt-2 p-3 outline-none border rounded-xl border-gray-300 font-pregular placeholder:text-gray-400"
+									placeholder={userData.fullName}
+									maxLength={50}
+									value={updatedData.fullName}
+									onChangeText={(text) => {
+										setUpdatedData((prev) => ({ ...prev, fullName: text }))
+										if (error) setError("")
+									}}
+								/>
+							</View>
+
+							<View className="px-8">
+								<Text className="font-pmedium">Email:</Text>
+								<TextInput
+									className="mt-2 p-3 outline-none border rounded-xl border-gray-300 font-pregular placeholder:text-gray-400"
+									placeholder={userData.email}
+									maxLength={128}
+									value={updatedData.email}
+									onChangeText={(text) => {
+										setUpdatedData((prev) => ({ ...prev, email: text }))
+										if (error) setError("")
+									}}
+								/>
+							</View>
+
+							<View className="px-8">
+								<Text className="font-pmedium">Contact No:</Text>
+								<TextInput
+									className="mt-2 p-3 outline-none border rounded-xl border-gray-300 font-pregular placeholder:text-gray-400"
+									placeholder={userData.contactNo}
+									maxLength={10}
+									keyboardType="numeric"
+									value={updatedData.contactNo}
+									onChangeText={(text) => {
+										setUpdatedData((prev) => ({ ...prev, contactNo: text }))
+										if (error) setError("")
+									}}
+								/>
+							</View>
+
+							<View className="px-8">
+								<Text className="font-pmedium">District:</Text>
+								<DropDownPicker
+									open={open}
+									value={updatedData.location}
+									items={districtOptions}
+									setOpen={setOpen}
+									setValue={(callback) => {
+										const newValue = callback(updatedData.location)
+										setUpdatedData((prev) => ({
+											...prev,
+											location: newValue,
+										}))
+										if (error) setError("")
+									}}
+									placeholder={
+										userData.location ? userData.location : "Select district"
+									}
+									style={{
+										borderColor: "#ccc",
+										borderRadius: 10,
+										paddingHorizontal: 10,
+										backgroundColor: "F2F2F2",
+									}}
+									dropDownContainerStyle={{
+										borderColor: "#d1d5db",
+										borderRadius: 10,
+									}}
+									textStyle={{
+										fontSize: 14,
+										color: "black",
+										fontFamily: "Poppins-Regular",
+									}}
+									placeholderStyle={{
+										color: "#A0AEC0",
+										fontSize: 14,
+									}}
+									ArrowDownIconComponent={() => (
+										<Feather name="chevron-down" size={24} color="gray" />
+									)}
+									ArrowUpIconComponent={() => (
+										<Feather name="chevron-up" size={24} color="gray" />
+									)}
+									autoScroll={true}
+									listMode="SCROLLVIEW"
+								/>
+							</View>
+
+							<View className="px-8">
+								<Text className="font-pmedium">Password:</Text>
+								<TextInput
+									className="mt-2 p-3 outline-none border rounded-xl border-gray-300 font-pregular placeholder:text-gray-400"
+									placeholder=""
+									maxLength={154}
+									secureTextEntry={true}
+									value={updatedData.password}
+									onChangeText={(text) => {
+										setUpdatedData((prev) => ({ ...prev, password: text }))
+										if (error) setError("")
+									}}
+								/>
+							</View>
 						</View>
 
-						<View className="px-8">
-							<Text className="font-pmedium">Contact No:</Text>
-							<TextInput
-								className="mt-2 p-3 outline-none border rounded-xl border-gray-300 font-pregular placeholder:text-gray-400"
-								placeholder={userData.contactNo}
-								maxLength={10}
-								keyboardType="numeric"
-								value={updatedData.contactNo}
-								onChangeText={(text) => {
-									setUpdatedData((prev) => ({ ...prev, contactNo: text }))
-									if (error) setError("")
-								}}
-							/>
-						</View>
+						{error && (
+							<Text className="font-pmedium text-base text-red-500 px-8 mt-4">
+								{error}
+							</Text>
+						)}
 
-						<View className="px-8">
-							<Text className="font-pmedium">District:</Text>
-							<DropDownPicker
-								open={open}
-								value={updatedData.location}
-								items={districtOptions}
-								setOpen={setOpen}
-								setValue={(callback) => {
-									const newValue = callback(updatedData.location)
-									setUpdatedData((prev) => ({ ...prev, location: newValue }))
-									if (error) setError("")
-								}}
-								placeholder={userData.location ? userData.location : "Select district"}
-								style={{
-									borderColor: "#ccc",
-									borderRadius: 10,
-									paddingHorizontal: 10,
-									backgroundColor: "F2F2F2",
-								}}
-								dropDownContainerStyle={{
-									borderColor: "#d1d5db",
-									borderRadius: 10,
-								}}
-								textStyle={{
-									fontSize: 14,
-									color: "black",
-									fontFamily: "Poppins-Regular",
-								}}
-								placeholderStyle={{
-									color: "#A0AEC0",
-									fontSize: 14,
-								}}
-								ArrowDownIconComponent={() => (
-									<Feather name="chevron-down" size={24} color="gray" />
+						<TouchableOpacity
+							onPress={handleUpdate}
+							disabled={isLoading}
+							activeOpacity={0.8}
+						>
+							<View className="flex flex-row justify-center items-center gap-4 mt-12 border-2 bg-black py-3 rounded-xl mx-8">
+								{isLoading ? (
+									<ActivityIndicator color="white" />
+								) : (
+									<>
+										<Feather name="save" size={24} color="white" />
+										<Text className="font-pmedium text-white">
+											Save Changes
+										</Text>
+									</>
 								)}
-								ArrowUpIconComponent={() => (
-									<Feather name="chevron-up" size={24} color="gray" />
-								)}
-							/>
-						</View>
+							</View>
+						</TouchableOpacity>
+					</>
+				)}
+			</>
+		)
+	}
 
-						<View className="px-8">
-							<Text className="font-pmedium">Password:</Text>
-							<TextInput
-								className="mt-2 p-3 outline-none border rounded-xl border-gray-300 font-pregular placeholder:text-gray-400"
-								placeholder=""
-								maxLength={154}
-								secureTextEntry={true}
-								value={updatedData.password}
-								onChangeText={(text) => {
-									setUpdatedData((prev) => ({ ...prev, password: text }))
-									if (error) setError("")
-								}}
-							/>
-						</View>
-					</View>
-
-					{error && (
-						<Text className="font-pmedium text-base text-red-500 px-8 mt-4">
-							{error}
-						</Text>
-					)}
-
-					<TouchableOpacity onPress={handleUpdate} disabled={isLoading}>
-						<View className="flex flex-row justify-center items-center gap-4 mt-12 border-2 bg-black py-3 rounded-xl mx-8">
-							{isLoading ? (
-								<ActivityIndicator color="white" />
-							) : (
-								<>
-									<Feather name="save" size={24} color="white" />
-									<Text className="font-pmedium text-white">Save Changes</Text>
-								</>
-							)}
-						</View>
-					</TouchableOpacity>
-				</>
-			)}
+	return (
+		<SafeAreaView className="flex-1 bg-[#F2F2F2] mt-4">
+			<FlatList
+				data={profileData}
+				renderItem={renderProfileContent}
+				keyExtractor={(item) => item.id}
+				showsVerticalScrollIndicator={false}
+				contentContainerStyle={{ paddingBottom: 20 }}
+				nestedScrollEnabled={true}
+			/>
 		</SafeAreaView>
 	)
 }

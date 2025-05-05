@@ -3,6 +3,7 @@ import {
 	Text,
 	ScrollView,
 	TextInput,
+	Pressable,
 	TouchableOpacity,
 } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
@@ -11,6 +12,7 @@ import { useCommunity } from "../../../../context/communityContext"
 import Post from "../../../../components/Post"
 import { createReply, getReplyById } from "../../../../api/communityApi"
 import { useRouter, useLocalSearchParams } from "expo-router"
+import Feather from "@expo/vector-icons/Feather"
 
 const reply = () => {
 	const router = useRouter()
@@ -76,12 +78,21 @@ const reply = () => {
 	}
 
 	return (
-		<SafeAreaView className="flex-1 bg-[#E7EDEF]">
-			<ScrollView className="px-4 pb-28">
-				<Post
-					post={selectedPost}
-					replying={true}
+		<SafeAreaView className="flex-1 bg-[#E7EDEF] mt-4">
+			<Pressable
+				onPress={() => {
+					router.back()
+				}}
+			>
+				<Feather
+					name="chevron-left"
+					size={32}
+					color="black"
+					className="ml-2 mb-4"
 				/>
+			</Pressable>
+			<ScrollView className="px-4 pb-28">
+				<Post post={selectedPost} replying={true} />
 				<Text className="text-base font-pmedium text-green-500 py-2">
 					Replying to {replyingUser?.fullName}
 				</Text>

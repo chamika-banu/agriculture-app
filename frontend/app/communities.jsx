@@ -89,8 +89,7 @@ const Communities = () => {
 	}, [searchQuery, searching])
 
 	// Fetch data when search is active
-	useEffect(() => {
-		console.log('search')
+	useEffect(() => {		
 		if (searching) {			
 			fetchData()
 		}
@@ -101,7 +100,10 @@ const Communities = () => {
 	}
 
 	return (
-		<SafeAreaView className="flex-1 bg-[#F2F2F2]" onTouchStart={showButton}>
+		<SafeAreaView
+			className="flex-1 bg-[#F2F2F2] mt-4"
+			onTouchStart={showButton}
+		>
 			<Pressable
 				onPress={() => {
 					router.push("/community")
@@ -266,6 +268,7 @@ const Communities = () => {
 
 			{isButtonVisible && (
 				<TouchableOpacity
+					activeOpacity={0.8}
 					onPress={() => {
 						setIsModalVisible(true)
 						showButton()

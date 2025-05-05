@@ -6,7 +6,7 @@ import {
 	Pressable,
 	RefreshControl,
 } from "react-native"
-import React, { useEffect, useState, useCallback } from "react"
+import React, { useState, useCallback } from "react"
 import { useLocalSearchParams, useRouter, useFocusEffect } from "expo-router"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { getRepliesForPost } from "../../../api/communityApi"
@@ -142,7 +142,7 @@ const Post = ({ community }) => {
 	}
 
 	return (
-		<SafeAreaView className="flex-1 bg-[#F2F2F2]">
+		<SafeAreaView className="flex-1 mt-4 bg-[#F2F2F2]">
 			<Pressable
 				onPress={() => {
 					router.back()

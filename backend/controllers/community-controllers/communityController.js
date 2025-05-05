@@ -55,6 +55,7 @@ export const createCommunity = async (req, res) => {
 	}
 }
 
+// Update a community
 export const updateCommunity = async (req, res) => {
 	try {
 		const { communityId } = req.params

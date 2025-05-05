@@ -49,7 +49,7 @@ const Community = () => {
 	}
 
 	return (
-		<SafeAreaView className="flex-1 bg-[#F2F2F2]">
+		<SafeAreaView className="flex-1 bg-[#F2F2F2] mt-4">
 			<Pressable
 				onPress={() => {
 					router.push("/communities")

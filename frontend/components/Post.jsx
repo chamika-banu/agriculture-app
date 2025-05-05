@@ -23,7 +23,7 @@ const Post = ({ post, community, replying }) => {
 		imageUrl,
 		content,
 		replies,
-	} = post
+	} = post	
 
 	// Check if the logged-in user is the admin (author) of the post
 	const admin = userId === postAuthor._id 
@@ -108,7 +108,7 @@ const Post = ({ post, community, replying }) => {
 					onToggleMenu={toggleMenu}
 					onDelete={onDelete}
 					showMenu={showMenu}
-					admin={admin}
+					admin={admin}					
 				/>
 			)}
 		</View>

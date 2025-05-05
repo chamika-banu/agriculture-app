@@ -24,7 +24,7 @@ export function generateToken(user) {
 		username: user.email,
 		role: user.role,
 	}
-	const token = sign(payload, SECRET_KEY, { expiresIn: "24h" }) // Changed to 24 hours
+	const token = sign(payload, SECRET_KEY, { expiresIn: "7d" }) 
 	return token
 }
 

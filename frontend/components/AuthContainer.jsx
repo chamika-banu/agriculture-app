@@ -16,9 +16,11 @@ const AuthContainer = ({ children }) => {
 			>
 				<View className="flex items-center gap-2 mt-24">
 					<Text className="font-pextrabold text-4xl uppercase">
-						PlantGuard SL
+						PlantGuard.lk
 					</Text>
-					<Text className="font-pmedium">Growing Smarter, Farming Better.</Text>
+					<Text className="font-pmedium">
+						Smart Disease Detection for Tea & Cinnamon.
+					</Text>
 				</View>
 			</ImageBackground>
 			<View className="w-full h-3/4 bg-[#F2F2F2] border border-t-2 rounded-3xl border-green-500">

@@ -91,7 +91,7 @@ const Community = () => {
 
 	return (
 		<SafeAreaView
-			className="flex-1 bg-[#F2F2F2]"
+			className="flex-1 bg-[#F2F2F2] mt-4"
 			edges={["top", "left", "right"]}
 			onTouchStart={showButton}
 		>
@@ -112,7 +112,10 @@ const Community = () => {
 							transition={300}
 						/>
 					</Pressable>
-					<TouchableOpacity onPress={() => router.push("communities")}>
+					<TouchableOpacity
+						onPress={() => router.push("communities")}
+						activeOpacity={0.8}
+					>
 						<View>
 							<Text className="text-[#2bbc49] text-lg font-pmedium  bg-[#2bbc49]/10 px-3 py-1 rounded-md border border-[#2bbc49]">
 								Communities
@@ -153,6 +156,7 @@ const Community = () => {
 
 			{isButtonVisible && (
 				<TouchableOpacity
+					activeOpacity={0.8}
 					onPress={() => {
 						setIsModalVisible(true)
 						showButton()

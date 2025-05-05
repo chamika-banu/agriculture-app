@@ -3,8 +3,8 @@ import {
 	getAllCommunities,
 	joinCommunity,
 	leaveCommunity,
-	getPostsFromAllUsersCommunities,	
-	likeUnlikePost
+	getPostsFromAllUsersCommunities,
+	likeUnlikePost,
 } from "../api/communityApi"
 import { useAuth } from "./authContext"
 
@@ -37,24 +37,22 @@ export const CommunityProvider = ({ children }) => {
 		setPostsError(null)
 
 		if (fetchType === "communities" || fetchType === "both") {
-			try {				
+			try {
 				// console.log("Fetching communities for user: ", userId)
 				const { userCommunities, nonUserCommunities } = await getAllCommunities(
 					userId
-				)
+				)				
 				setUserCommunities(userCommunities || [])
 				setNonUserCommunities(nonUserCommunities || [])
 			} catch (error) {
 				console.error("Error fetching communities:", error)
-				setCommunityError(
-					"Failed to fetch communities. Please try again later."
-				)
+				setCommunityError("Failed to fetch communities. Please try again later.")
 			}
 		}
 
 		// Fetch posts
 		if (fetchType === "posts" || fetchType === "both") {
-			try {	
+			try {
 				// console.log("Fetching posts for user: ", userId)
 				const postsData = await getPostsFromAllUsersCommunities(userId)
 				setPosts(postsData || [])
@@ -95,7 +93,7 @@ export const CommunityProvider = ({ children }) => {
 
 	const handleJoinCommunity = async (communityId) => {
 		try {
-			await joinCommunity(communityId)			
+			await joinCommunity(communityId)
 
 			fetchData()
 		} catch (error) {

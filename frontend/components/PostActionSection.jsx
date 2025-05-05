@@ -12,29 +12,17 @@ const PostActionSection = ({
 	onDelete,
 	showMenu,
 	replyCount,
-	admin
-}) => {	
+	admin,	
+}) => {
 	return (
 		<View className="flex flex-row justify-between mt-4">
 			<View className="flex flex-row gap-4">
-				
-				<Pressable
-					className="flex flex-row items-center"
-					onPress={onReply}
-				>
-					<Ionicons
-						name="chatbubble-outline"
-						size={18}
-						className="mr-1"
-					/>
+				<Pressable className="flex flex-row items-center" onPress={onReply}>
+					<Ionicons name="chatbubble-outline" size={18} className="mr-1" />
 					<Text>{replyCount}</Text>
 				</Pressable>
 
-				
-				<Pressable
-					className="flex flex-row items-center"
-					onPress={onLike}
-				>
+				<Pressable className="flex flex-row items-center" onPress={onLike}>
 					<Ionicons
 						name={liked ? "heart" : "heart-outline"}
 						color={liked ? "red" : "black"}
@@ -43,31 +31,21 @@ const PostActionSection = ({
 					/>
 					<Text>{likeCount}</Text>
 				</Pressable>
-			</View>			
+			</View>
 
-			
 			{admin && (
 				<Pressable onPress={onToggleMenu}>
-					<Ionicons
-						name="ellipsis-vertical-sharp"
-						size={19}
-						color="black"
-					/>
+					<Ionicons name="ellipsis-vertical-sharp" size={19} color="black" />
 				</Pressable>
 			)}
 
-			
 			{showMenu && (
 				<View className="absolute right-8 bottom-1 rounded-md shadow-md z-10 p-1 bg-white">
 					<Pressable
 						onPress={onDelete}
 						className="p-2 rounded-md flex flex-row gap-2 items-center"
 					>
-						<Feather
-							name="trash"
-							size={20}
-							color="#ef4444"
-						/>
+						<Feather name="trash" size={20} color="#ef4444" />
 						<Text className="text-red-500 font-pmedium">Delete</Text>
 					</Pressable>
 				</View>
