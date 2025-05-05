@@ -90,10 +90,13 @@ const Home = () => {
 	}
 
 	return (
-		<SafeAreaView className="flex-1 bg-[#F2F2F2]">
-			<ScrollView className="px-4 mt-2">
+		<SafeAreaView
+			className="flex-1 bg-[#F2F2F2]"
+			edges={["top", "left", "right"]}
+		>
+			<ScrollView className="px-4">
 				<Text className="font-psemibold text-lg">
-					Welcome, {user.fullName} 👋
+					Hello, {user.fullName} 👋
 				</Text>
 				<Text className="font-psemibold text-2xl text-[#22c55e] mt-2">
 					Plant Disease Analysis
@@ -113,37 +116,35 @@ const Home = () => {
 						{ label: "Tea", value: "tea" },
 						{ label: "Cinnamon", value: "cinnamon" },
 					]}
-					style={{						
-						marginVertical: 20,							
+					style={{
+						marginVertical: 20,
 					}}
 					textStyle={{ fontFamily: "Poppins-Regular" }}
 					selectedTextStyle={{ fontFamily: "Poppins-Regular" }}
 					fontSize={14}
 				/>
 
-				<View className="mt-4">
-					<TouchableOpacity
-						onPress={pickImage}
-						className="bg-black p-3 rounded-xl mb-4"
-					>
-						<Text className="text-white text-center font-pmedium">
-							Pick Image from Gallery
-						</Text>
-					</TouchableOpacity>
+				<TouchableOpacity
+					onPress={pickImage}
+					className="bg-black p-3 rounded-xl mb-4 mt-4"
+				>
+					<Text className="text-white text-center font-pmedium">
+						Pick Image from Gallery
+					</Text>
+				</TouchableOpacity>
 
-					<TouchableOpacity
-						onPress={captureImage}
-						className="bg-black p-3 rounded-xl"
-					>
-						<Text className="text-white text-center font-pmedium">
-							Capture Image from Camera
-						</Text>
-					</TouchableOpacity>
-				</View>
+				<TouchableOpacity
+					onPress={captureImage}
+					className="bg-black p-3 rounded-xl"
+				>
+					<Text className="text-white text-center font-pmedium">
+						Capture Image from Camera
+					</Text>
+				</TouchableOpacity>
 
 				{image && (
 					<>
-						<View className="mt-12">
+						<View className="mt-5">
 							<Image
 								source={{ uri: image }}
 								style={{ width: "100%", height: 300, borderRadius: 10 }}
@@ -151,18 +152,31 @@ const Home = () => {
 							/>
 						</View>
 
-						<TouchableOpacity
-							onPress={handleUpload}
-							className="bg-black p-3 rounded-xl mt-4"
-						>
-							{loading ? (
-								<LoadingSpinner />
-							) : (
+						{!result ? (
+							<TouchableOpacity
+								onPress={handleUpload}
+								className="bg-black p-3 rounded-xl mt-4"
+							>
+								{loading ? (
+									<LoadingSpinner />
+								) : (
+									<Text className="text-white text-center font-pmedium">
+										Analyze Image
+									</Text>
+								)}
+							</TouchableOpacity>
+						) : (
+							<TouchableOpacity
+								onPress={() => {
+									setResult(null)
+								}}
+								className="bg-red-500 p-3 rounded-xl mt-4"
+							>
 								<Text className="text-white text-center font-pmedium">
-									Upload image for disease analysis
+									Clear analysis
 								</Text>
-							)}
-						</TouchableOpacity>
+							</TouchableOpacity>
+						)}
 					</>
 				)}
 
@@ -172,10 +186,10 @@ const Home = () => {
 							result.predictions.map((prediction, index) => (
 								<View
 									key={index}
-									className="bg-white p-4 mt-4 rounded-xl shadow-md"
+									className="bg-white p-4 my-4 rounded-xl shadow-md"
 								>
-									<Text className="font-bold text-lg mb-2">
-										{index + 1}. {prediction.disease}
+									<Text className="font-bold text-xl mb-2">
+										{prediction.disease}
 									</Text>
 
 									<Text className="font-psemibold mb-1">
@@ -208,19 +222,43 @@ const Home = () => {
 								</View>
 							))
 						) : result.error ? (
-							<Text className="text-red-500 text-center font-psemibold mt-8">
+							<Text className="text-gray-700 text-center font-psemibold mt-8">
 								{result.error}
 							</Text>
-						) : (
-							<Text className="text-base text-center mt-4">
-								No disease predictions found.
+						) : result.unknown ? (
+							<Text className="text-base text-center font-psemibold mt-8 text-gray-700">
+								{result.unknown}
 							</Text>
-						)}
+						) : null}
 					</>
-				) : (
-					<Text className="text-base font-medium mt-8 text-center">
-						Upload an image for analysis.
-					</Text>
+				) : image !== null ? null : (
+					<>
+						<Text className="text-base font-pmedium mt-8 text-center">
+							Upload an image for analysis.
+						</Text>
+						<View className="mt-6 p-4 bg-white rounded-xl shadow-sm">
+							<Text className="font-bold text-lg font-pmedium">
+								Capturing Tips
+							</Text>
+							<View className="mt-2 flex gap-1">
+								<Text className="font-pmedium text-gray-700">
+									📸 Take photos in good lighting.
+								</Text>
+								<Text className="font-pmedium text-gray-700">
+									🌿 Make sure the leaf is clearly visible.
+								</Text>
+								<Text className="font-pmedium text-gray-700">
+									📷 Keep the camera steady and focused.
+								</Text>
+								<Text className="font-pmedium text-gray-700">
+									🔍 Capture close-up shots of the affected area.
+								</Text>
+								<Text className="font-pmedium text-gray-700">
+									🚫 Avoid blurry or shadowy images.
+								</Text>
+							</View>
+						</View>
+					</>
 				)}
 			</ScrollView>
 		</SafeAreaView>

@@ -60,16 +60,16 @@ const Post = ({ post, community, replying }) => {
 		<View className="bg-white p-4 my-2 rounded-2xl">
 			<View className="flex flex-row items-center">
 				<Image
-					source={{ uri: postAuthor.profileImage }} 
+					source={{ uri: postAuthor.profileImage }}
 					style={styles.profileImage}
 					contentFit="cover"
 					placeholder={{ blurhash }}
 				/>
 				<View className="ml-4 flex">
-					<View className="flex flex-row items-center ">
+					<View className="flex flex-row items-center">
 						<Text className="font-psemibold text-lg mr-2">
 							{postAuthor.fullName}
-						</Text>				
+						</Text>
 						<Text className="mt-1">•</Text>
 						<Text className="font-pregular text-sm ml-1">
 							{timeAgo(createdAt)}
@@ -78,7 +78,7 @@ const Post = ({ post, community, replying }) => {
 
 					<Text className="text-gray-500 font-pmedium text-base">
 						@
-						{(communityId?.name || community?.name) 
+						{(communityId?.name || community?.name)
 							?.replace(/\s+/g, "")
 							?.replace(/(?:^|\s)\S/g, (match) => match.toUpperCase())}
 					</Text>

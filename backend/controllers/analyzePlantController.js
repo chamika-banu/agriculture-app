@@ -37,7 +37,7 @@ export const analyzePlant = async (req, res) => {
                 The plant type is: ${plantType.toLowerCase()}.
 
                 Given the image of this ${plantType} plant, analyze it and respond in **JSON format** with:
-                - Top 3 disease predictions
+                - Top 1 disease prediction
                 - Accuracy percentage
                 - Description of the disease
                 - Eco-friendly treatment suggestions first (like neem oil, pruning), and only mention 1-2 chemical options at the end if necessary.             
@@ -66,7 +66,9 @@ export const analyzePlant = async (req, res) => {
                     ]
                 }
 
-                If the image does not contain a plant, or if the plant is not a tea or cinnamon plant, or if any other issue arises, respond with an error message in JSON format.
+                If the image does not contain a plant, or if the plant is not a tea or cinnamon plant, or if any other issue arises, respond with an error message in JSON format (ex: error: message).
+
+				If the image is not clear enough to make a prediction or something like that happens, respond with an unknown message in JSON format (ex: unknown: message).
 
                 Respond ONLY in JSON Object.`
 

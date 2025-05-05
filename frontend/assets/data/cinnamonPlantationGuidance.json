@@ -1,69 +1,53 @@
 {
 	"sections": [
 		{
-			"title": "Ceylon Cinnamon",
+			"title": "Introduction",
 			"content": [
-				"Cinnamomum Zeylanicum, indigenous to Sri Lanka, produces the highest-grade pure cinnamon, known as Ceylon Cinnamon.",
-				"Sri Lanka is the world's largest producer and exporter, holding 90% of the global market.",
-				"Ceylon Cinnamon is renowned for its unique quality, color, flavor, and aroma, making it superior to Cassia, a cheaper alternative.",
-				"Ceylon Cinnamon is used in bakery products, Asian foods, teas, chocolates, desserts, and pharmaceuticals due to its natural flavor and health benefits.",
-				"It is particularly known for its high antioxidant content.",
-				"Ceylon Cinnamon is categorized into grades (Alba, Continental, Mexican, Hamburg) based on quill diameter, with Alba (6 mm) being the most expensive."
+				"Ceylon Cinnamon (Cinnamomum zeylanicum), native to Sri Lanka, is the purest and highest-grade cinnamon globally.",
+				"Sri Lanka dominates 90% of the market, renowned for its superior quality, delicate flavor, and health benefits.",
+				"Unlike Cassia, Ceylon Cinnamon is low in coumarin, making it safer for regular consumption."
 			]
 		},
 		{
-			"title": "Environmental Factors",
+			"title": "Farming Techniques",
 			"content": [
-				"Cinnamon thrives in temperatures of 25-35°C, with annual rainfall above 1875 mm or irrigation in drier areas.",
-				"It can be cultivated up to 700 meters elevation in humid conditions (75-85% relative humidity).",
-				"Sri Lanka's suitable soils include acidic red soils in the wet zone, sandy loam along coasts, or managed dry zone soils.",
-				"Unsuitable lands for cinnamon cultivation include those with poor drainage, waterlogging, salinity, or slopes exceeding 60%.",
-				"These conditions hinder commercial cultivation."
+				"Planting: Spaced 4x3 ft (flat land) or 4x2 ft (slopes), with pits treated with rock phosphate.",
+				"Propagation: Seeds (June–July) or semi-hardwood cuttings from high-yield plants.",
+				"Pruning: Regular trimming to ensure straight stems for bark harvesting.",
+				"Irrigation: Basin/drip systems in dry zones; rainfall-dependent in wet zones."
 			]
 		},
 		{
-			"title": "Cinnamon Cultivation",
+			"title": "Environmental Requirements",
 			"content": [
-				"Cinnamon is planted in full sunlight with 4x3 ft spacing on flat land (9000 pits/ha) or 4x2 ft on slopes (14,000 pits/ha).",
-				"Pits (1x1x1 ft) are treated with 25g Eppawala Rock Phosphate, and sulfur is applied in former rubber soils to prevent white root disease.",
-				"Planting aligns with the Yala/Maha rainy seasons.",
-				"Cultivation involves thinning (keeping 3-5 healthy plants per hole), irrigation (basin, drip, etc.), and weed management by cutting rather than eradication to prevent soil erosion.",
-				"Pruning removes cross branches and weak shoots, starting at 1.5 years, with regular cycles to ensure straight stems for bark harvesting."
+				"Climate: 25–35°C, 75–85% humidity, and 1875+ mm annual rainfall.",
+				"Soil: Well-drained acidic red/sandy loam; avoids waterlogged/saline soils.",
+				"Altitude: Up to 700m elevation in humid conditions."
 			]
 		},
 		{
-			"title": "Seed Propagation",
+			"title": "Disease & Pest Management",
 			"content": [
-				"Seed propagation uses well-ripened, purple seeds planted in June-July.",
-				"Nurseries require sunny, well-drained sites for optimal growth.",
-				"Pots (20x12.5 cm) are filled with a potting mix, and 8-10 seeds are planted per pot.",
-				"The seeds are covered with a thin soil layer and coir for moisture retention.",
-				"Seedlings are ready for field planting in 4-6 months, with pots containing 5-8 healthy plants, 15 cm tall, and free of disease."
+				"Diseases: Rough Bark, White Root (treated with tebuconazole, sulfur).",
+				"Pests: Pink Stem Borer (insecticides), Thrips (pruning + Abamectin).",
+				"Prevention: Soil drainage, selective weeding, and organic compost."
 			]
 		},
 		{
-			"title": "Vegetative Propagation",
+			"title": "Harvesting & Grading",
 			"content": [
-				"Vegetative propagation ensures uniform quality by using semi-hardwood cuttings with active lateral buds from high-quality mother plants.",
-				"Cuttings are taken early in the morning, kept in water, and planted in pots with a compacted potting mix in a shaded propagator.",
-				"After 4-6 months of acclimatization, plants are ready for field transplantation."
+				"Harvest: Bark peeled from 1.5–2-year-old stems during rainy seasons.",
+				"Grades: Alba (6mm, premium), Continental, Mexican, Hamburg (thicker quills).",
+				"Uses: Bakery, teas, pharmaceuticals, and antioxidants."
 			]
 		},
 		{
-			"title": "Fertilizer Management",
+			"title": "Tips for Success",
 			"content": [
-				"Soil nutrient management involves maintaining moisture, acidity, and microorganisms in the soil.",
-				"Dolomite is used to regulate soil pH, and fertilization combines 50g inorganic fertilizer with 1kg compost per bush annually.",
-				"Fertilizer amounts increase over three years: 60-180 kg/acre nitrogen, 30-90 kg/acre phosphorus, and 30-90 kg/acre potassium.",
-				"Fertilizer quantities are adjusted based on spacing and soil tests."
-			]
-		},
-		{
-			"title": "Disease and Pest Management",
-			"content": [
-				"Common diseases include Rough Bark, Leaf Blight, White Root, and Brown Root Rot.",
-				"These are managed through pruning, fungicides (e.g., tebuconazole), and soil drainage.",
-				"Pests like Pink Stem Borer, Leaf Galls, and Thrips are controlled by covering plant bases, pruning infested leaves, and applying insecticides like Abamectin or Imidacloprid during flushing stages."
+				"Use vegetative propagation for uniform quality.",
+				"Test soil pH (dolomite adjusts acidity).",
+				"Avoid over-pruning; retain 3–5 shoots per bush.",
+				"Market value peaks for Alba-grade quills."
 			]
 		}
 	]

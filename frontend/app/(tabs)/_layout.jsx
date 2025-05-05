@@ -54,9 +54,27 @@ const TabLayout = () => {
 					headerShown: false,
 					tabBarIcon: ({ color, focused }) => (
 						<TabIcon
-							icon={<Ionicons name="leaf-outline" size={24} color={color}/>}
+							icon={<Ionicons name="leaf-outline" size={24} color={color} />}
 							color={color}
 							name="Plantations"
+							focused={focused}
+						/>
+					),
+				}}
+			/>
+
+			<Tabs.Screen
+				name="news"
+				options={{
+					title: "News",
+					headerShown: false,
+					tabBarIcon: ({ color, focused }) => (
+						<TabIcon
+							icon={
+								<Ionicons name="newspaper-outline" size={24} color={color} />
+							}
+							color={color}
+							name="News"
 							focused={focused}
 						/>
 					),

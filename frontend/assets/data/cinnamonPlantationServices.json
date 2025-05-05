@@ -1,7 +1,6 @@
 {
   "sections": [
-    {
-      "title": "Cinnamon Plantation Contacts",
+    {      
       "content": "Contact details for key organizations supporting cinnamon plantations in Sri Lanka."
     },
     {
@@ -11,7 +10,7 @@
           "location": "Gunarathna Weerakoon Mawatha, Borakanda, Karandeniya",
           "links": [
             {
-              "title": "Call: +94 91 2210999",
+              "title": "+94 91 2210999",
               "url": "tel:+94912210999"
             },
             {
@@ -29,7 +28,7 @@
           "location": "C-Wing, 8th Floor, Sethsiripaya Stage II, Battaramulla",
           "links": [
             {
-              "title": "Call: +94 112 186 093",
+              "title": "+94 112 186 093",
               "url": "tel:+94112186093"
             },
             {
@@ -51,7 +50,7 @@
           "location": "Head Office: No. 427/14, Robert Gunawardena Mawatha, Battaramulla",
           "links": [
             {
-              "title": "Call: +94 112 887 497",
+              "title": "+94 112 887 497",
               "url": "tel:+94112887497"
             },
             {
@@ -73,7 +72,7 @@
           "location": "Head Office: No. 21, BBC Complex, Miraniya Street, Colombo 12",
           "links": [
             {
-              "title": "Call: +94 115 757 539",
+              "title": "+94 115 757 539",
               "url": "tel:+94115757539"
             },
             {
@@ -91,7 +90,7 @@
           "location": "M.D.H. Jayawardena Mawatha, Athurugiriya",
           "links": [
             {
-              "title": "Call: +94 11 277 0232",
+              "title": "+94 11 277 0232",
               "url": "tel:+94112770232"
             },
             {
@@ -113,7 +112,7 @@
           "location": "Head Office: No. 42, Sri Marcus Fernando Mawatha, P.O. Box 537, Colombo 07",
           "links": [
             {
-              "title": "Call: +94 114 209 235",
+              "title": "+94 114 209 235",
               "url": "tel:+94114209235"
             },
             {
@@ -135,7 +134,7 @@
 					"location": "Galle: C/o, Walahanduwa Estate, Walahanduwa",
 					"links": [
 						{
-							"title": "Call: +94 91 222 2424",
+							"title": "+94 91 222 2424",
 							"url": "tel:+94912222424"
 						}
 					]
@@ -144,7 +143,7 @@
 					"location": "Kandy: No. 01, Balakotuwa Camp Road, Pallakele, Kundasale",
 					"links": [
 						{
-							"title": "Call: +94 81 242 2284",
+							"title": "+94 81 242 2284",
 							"url": "tel:+94812422284"
 						}
 					]
