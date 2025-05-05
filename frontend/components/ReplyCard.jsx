@@ -102,7 +102,7 @@ const ReplyCard = ({ reply, admin, nestLevel = 0, isLastReply = false }) => {
 					</Text>
 				</Text>
 
-				<Text className="text-lg font-pregular mb-3">{content}</Text>
+				<Text className="text-md font-pregular mb-3">{content}</Text>
 
 				<PostActionSection
 					liked={liked}
