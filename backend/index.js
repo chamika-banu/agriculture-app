@@ -41,11 +41,6 @@ app.use("/api/community-posts", postRoutes)
 app.use("/api/community-replies", replyRoutes)
 app.use("/api/analyze-plant", analyzePlantRoute)
 
-// Test connection
-app.get("/", (res) => {
-	res.send("Server is up running")
-})
-
 app.listen(process.env.PORT || 8070, () => {
 	console.log(`Server is running on port ${process.env.PORT}.`)
 })
