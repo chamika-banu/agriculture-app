@@ -182,7 +182,7 @@ const Post = ({ community }) => {
 						</Pressable>
 					</View>
 				</View>
-				<Text className="mt-4 text-lg font-pregular">{content}</Text>
+				<Text className="mt-4 text-md font-pregular">{content}</Text>
 				{imageUrl && (
 					<View className="flex mt-4 items-center w-full overflow-hidden rounded-2xl">
 						<Image
