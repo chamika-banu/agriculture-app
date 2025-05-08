@@ -25,6 +25,7 @@ const SignIn = () => {
 		if (!credentials.email.trim() || !credentials.password.trim()) {
 			setError("All fields are required")
 			hasErrors = true
+			return
 		}
 
 		if (!/\S+@\S+\.\S+/.test(credentials.email)) {
