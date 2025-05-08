@@ -82,8 +82,8 @@ const Home = () => {
 
 			console.log(parsed)
 		} catch (error) {
-			console.error(error)
-			setResult(null)
+			// console.error(error)
+			setResult({ error: "Something went wrong. Please try again." })
 		} finally {
 			setLoading(false)
 		}
@@ -225,8 +225,8 @@ const Home = () => {
 									))}
 								</View>
 							))
-						) : result.error ? (
-							<Text className="text-gray-700 text-center font-psemibold mt-8">
+						) : result.error ? (							
+							<Text className="text-red-500 text-center font-psemibold mt-8">
 								{result.error}
 							</Text>
 						) : result.unknown ? (
