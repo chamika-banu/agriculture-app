@@ -34,7 +34,7 @@ const profile = () => {
 	const { logout } = useAuth()
 	const [error, setError] = useState("")
 	const [isLoading, setIsLoading] = useState(false)
-	const [isEditing, setIsEditing] = useState(true)
+	const [isEditing, setIsEditing] = useState(false)
 	const [userData, setUserData] = useState({
 		fullName: "",
 		email: "",
