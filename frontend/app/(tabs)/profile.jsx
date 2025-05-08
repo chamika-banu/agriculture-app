@@ -31,7 +31,7 @@ import {
 const profile = () => {
 	const [open, setOpen] = useState(false)
 	const [image, setImage] = useState(null)
-	const { logout } = useAuth()
+	const { logout, setUser } = useAuth()
 	const [error, setError] = useState("")
 	const [isLoading, setIsLoading] = useState(false)
 	const [isEditing, setIsEditing] = useState(false)
@@ -185,6 +185,10 @@ const profile = () => {
 			updatedData.fullName.trim()
 		) {
 			changes.fullName = updatedData.fullName
+			setUser((prev) => ({
+				...prev,
+				fullName: updatedData.fullName,
+			}))
 		}
 
 		if (updatedData.email !== userData.email && updatedData.email.trim()) {
